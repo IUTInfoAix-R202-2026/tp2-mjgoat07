@@ -92,25 +92,7 @@ public class PaletteReactive extends Application {
       BoutonCouleur btnBleu,
       Pane zone,
       Label labelCompteurs) {
-    // TODO exercice 3 : créer les bindings.
-    //
-    // 1. Pour chaque bouton, ajouter un handler setOnAction (en plus de celui
-    // du BoutonCouleur) qui change le style de la zone :
-    // zone.setStyle("-fx-background-color: " + btn.getCouleur() + ";")
-    // Note : le BoutonCouleur incrémente déjà nbClics dans son propre handler.
-    // L'ajout d'un 2e handler via addEventHandler(ActionEvent.ACTION, ...) ou
-    // en encapsulant l'ancien fonctionne aussi, mais le plus simple est
-    // d'utiliser un ChangeListener sur nbClicsProperty() pour changer la couleur.
-    //
-    // 2. Créer une StringExpression avec Bindings.concat() :
-    // "Rouge: " + btnRouge.nbClicsProperty().asString()
-    // + " Vert: " + btnVert.nbClicsProperty().asString()
-    // + " Bleu: " + btnBleu.nbClicsProperty().asString()
-    //
-    // 3. Lier labelCompteurs.textProperty() à cette expression via bind().
-    //
-    // 4. (Optionnel) Utiliser Bindings.when() pour afficher "Bienvenue !"
-    // quand aucun bouton n'a été cliqué, et le texte des compteurs sinon.
+
     btnRouge
         .nbClicsProperty()
         .addListener((obs, o, n) -> zone.setStyle("-fx-background-color: red;"));
@@ -130,9 +112,6 @@ public class PaletteReactive extends Application {
     NumberBinding total =
         btnRouge.nbClicsProperty().add(btnVert.nbClicsProperty()).add(btnBleu.nbClicsProperty());
 
-    labelCompteurs
-        .textProperty()
-        .bind(Bindings.when(total.isEqualTo(0)).then("Bienvenue !").otherwise(texteCompteurs));
     labelCompteurs
         .textProperty()
         .bind(Bindings.when(total.isEqualTo(0)).then("Bienvenue !").otherwise(texteCompteurs));
