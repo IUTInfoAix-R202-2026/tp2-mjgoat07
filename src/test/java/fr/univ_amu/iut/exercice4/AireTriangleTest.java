@@ -22,7 +22,6 @@ class AireTriangleTest {
 
   // --- Étape 1 : les propriétés existent ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(1)
   void testLesProprietesSontInitialiseesAZero() {
@@ -34,7 +33,6 @@ class AireTriangleTest {
     assertThat(triangle.getY3()).as("y3 initial").isEqualTo(0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(2)
   void testLesProprietesJavaBeansFonctionnent() {
