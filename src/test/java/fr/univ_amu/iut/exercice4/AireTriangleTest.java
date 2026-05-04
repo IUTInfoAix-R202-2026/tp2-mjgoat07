@@ -3,7 +3,6 @@ package fr.univ_amu.iut.exercice4;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -43,7 +42,6 @@ class AireTriangleTest {
 
   // --- Étape 2 : le binding calcule l'aire ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(3)
   void testTriangleVideAireZero() {
@@ -52,7 +50,6 @@ class AireTriangleTest {
         .isEqualTo(0.0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(4)
   void testTriangleUniteAireZeroVirguleCinq() {
@@ -64,7 +61,6 @@ class AireTriangleTest {
         .isEqualTo(0.5);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(5)
   void testTriangleCorrectArea() {
@@ -76,7 +72,6 @@ class AireTriangleTest {
         .isEqualTo(9.0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(6)
   void testTriangleDeuxiemeCorrectArea() {
@@ -90,7 +85,6 @@ class AireTriangleTest {
 
   // --- Étape 3 : valeur absolue ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(7)
   void testAirePositiveMemeAvecDeterminantNegatif() {
@@ -105,7 +99,6 @@ class AireTriangleTest {
 
   // --- Étape 4 : recalcul automatique ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(8)
   void testModifierCoordonneeRecalculeAire() {
@@ -122,7 +115,6 @@ class AireTriangleTest {
         .isEqualTo(9.0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(9)
   void testAreaPropertyEstLiee() {
@@ -133,7 +125,6 @@ class AireTriangleTest {
 
   // --- Étape 5 : affichage formaté ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(10)
   void testPrintResultAfficheLeTexteAttendu() {
