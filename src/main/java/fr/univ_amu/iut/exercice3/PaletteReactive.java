@@ -133,6 +133,9 @@ public class PaletteReactive extends Application {
     labelCompteurs
         .textProperty()
         .bind(Bindings.when(total.isEqualTo(0)).then("Bienvenue !").otherwise(texteCompteurs));
+    labelCompteurs
+        .textProperty()
+        .bind(Bindings.when(total.isEqualTo(0)).then("Bienvenue !").otherwise(texteCompteurs));
   }
 
   public static void main(String[] args) {
