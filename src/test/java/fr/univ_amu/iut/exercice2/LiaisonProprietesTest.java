@@ -39,7 +39,6 @@ class LiaisonProprietesTest {
 
   // --- Tests unitaires sur le mécanisme bind/unbind (sans console) ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(1)
   void testBindPropageLaValeur() {
@@ -53,7 +52,6 @@ class LiaisonProprietesTest {
         .isEqualTo(42);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(2)
   void testLaCibleSuitLaSource() {
@@ -68,7 +66,6 @@ class LiaisonProprietesTest {
         .isEqualTo(100);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(3)
   void testUnbindArreteLaPropagation() {
@@ -85,7 +82,6 @@ class LiaisonProprietesTest {
         .isEqualTo(100);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(4)
   void testIsBoundRetourneTrueSiLiee() {
@@ -126,7 +122,8 @@ class LiaisonProprietesTest {
   void testChangementSourcePropageVersCible() {
     liaison.lierEtDelierProprietes();
     verify(out).println("Calling anIntProperty.set(7168).");
-    // "otherProperty.get() = 7168" apparaît 5 fois au total (3 après set + 1 après unbind + 1
+    // "otherProperty.get() = 7168" apparaît 5 fois au total (3 après set + 1 après
+    // unbind + 1
     // finale)
     // On vérifie qu'il y en a au moins 3 (celles qui prouvent la propagation)
     verify(out, atLeast(3)).println("otherProperty.get() = 7168");

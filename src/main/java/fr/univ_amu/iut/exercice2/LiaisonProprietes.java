@@ -19,8 +19,8 @@ import javafx.beans.property.SimpleIntegerProperty;
  *   <li>{@code isBound()} : vérifier si une propriété est liée
  * </ul>
  *
- * @see <a
- *     href="https://openjfx.io/javadoc/25/javafx.base/javafx/beans/property/IntegerProperty.html#bind(javafx.beans.value.ObservableValue)">IntegerProperty.bind()</a>
+ * @see <a href=
+ *     "https://openjfx.io/javadoc/25/javafx.base/javafx/beans/property/IntegerProperty.html#bind(javafx.beans.value.ObservableValue)">IntegerProperty.bind()</a>
  */
 public class LiaisonProprietes {
 
@@ -49,34 +49,52 @@ public class LiaisonProprietes {
   void lierEtDelierProprietes() {
     // TODO exercice 2 : lier une propriété à une autre et observer la propagation.
     //
-    // 1. Créer une nouvelle IntegerProperty appelée otherProperty (valeur par défaut 0).
+    // 1. Créer une nouvelle IntegerProperty appelée otherProperty (valeur par
+    // défaut 0).
     //
-    // 2. Afficher une ligne vide, puis "otherProperty.get() = " + otherProperty.get()
-    //    -> Affiche 0 (valeur par défaut, pas encore liée).
+    // 2. Afficher une ligne vide, puis "otherProperty.get() = " +
+    // otherProperty.get()
+    // -> Affiche 0 (valeur par défaut, pas encore liée).
     //
     // 3. Afficher "Binding otherProperty to anIntProperty."
-    //    Appeler otherProperty.bind(anIntProperty).
+    // Appeler otherProperty.bind(anIntProperty).
     //
     // 4. Afficher "otherProperty.get() = " + otherProperty.get()
-    //    -> Affiche 1024 (la liaison a propagé la valeur de la source).
+    // -> Affiche 1024 (la liaison a propagé la valeur de la source).
     //
     // 5. Afficher "Calling anIntProperty.set(7168)."
-    //    Appeler anIntProperty.set(7168).
+    // Appeler anIntProperty.set(7168).
     //
     // 6. Afficher 3 fois "otherProperty.get() = " + otherProperty.get()
-    //    -> Affiche 7168 à chaque fois (la liaison propage automatiquement).
+    // -> Affiche 7168 à chaque fois (la liaison propage automatiquement).
     //
     // 7. Afficher "Unbinding otherProperty from anIntProperty."
-    //    Appeler otherProperty.unbind().
+    // Appeler otherProperty.unbind().
     //
     // 8. Afficher "otherProperty.get() = " + otherProperty.get()
-    //    -> Affiche toujours 7168 (la dernière valeur avant unbind).
+    // -> Affiche toujours 7168 (la dernière valeur avant unbind).
     //
     // 9. Afficher "Calling anIntProperty.set(8192)."
-    //    Appeler anIntProperty.set(8192).
+    // Appeler anIntProperty.set(8192).
     //
     // 10. Afficher "otherProperty.get() = " + otherProperty.get()
-    //     -> Affiche 7168 (plus de liaison, la cible ne suit plus).
+    // -> Affiche 7168 (plus de liaison, la cible ne suit plus).
+    SimpleIntegerProperty otherProperty = new SimpleIntegerProperty(0);
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("Binding otherProperty to anIntProperty.");
+    otherProperty.bind(anIntProperty);
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("Calling anIntProperty.set(7168)");
+    anIntProperty.set(7168);
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("Unbinding otherProperty from anIntProperty.");
+    otherProperty.unbind();
+    System.out.println("otherProperty.get() = " + otherProperty.get());
+    System.out.println("Calling anIntProperty.set(8192).");
+    anIntProperty.set(8192);
+    System.out.println("otherProperty.get() = " + otherProperty.get());
   }
 
   public int getAnInt() {
